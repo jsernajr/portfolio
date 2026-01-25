@@ -1,174 +1,250 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Your Name | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Bootstrap 5 CSS (CDN) -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-
-  <style>
-    body {
-      scroll-behavior: smooth;
-    }
-    header {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #e5e7eb;
-      display: flex;
-      align-items: center;
-    }
-    header .lead {
-      color: #9ca3af;
-    }
-    section {
-      padding: 4rem 0;
-    }
-    #projects .card {
-      transition: transform 0.1s ease, box-shadow 0.1s ease;
-    }
-    #projects .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0.5rem 1rem rgba(15, 23, 42, 0.25);
-    }
-    footer {
-      padding: 2rem 0;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourName - Application Security Analyst & Developer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 2rem; }
+        nav a { color: white; text-decoration: none; font-weight: 500; }
+        nav a:hover { color: #00d4ff; }
+        
+        /* Hero */
+        .hero { background: #0f1419; color: white; padding: 120px 0 80px; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; }
+        
+        /* Sections */
+        section { padding: 80px 0; }
+        section:nth-child(odd) { background: #f8f9fa; }
+        h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #1e3c72; }
+        
+        /* Skills Table */
+        .skills-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+        .skills-table th, .skills-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #ddd; }
+        .skills-table th { background: #1e3c72; color: white; }
+        
+        /* Projects */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .project-card { background: white; border-radius: 10px; padding: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-card h3 { color: #1e3c72; margin-bottom: 1rem; }
+        
+        /* Experience */
+        .experience-item { margin-bottom: 2rem; }
+        .job-title { font-size: 1.3rem; font-weight: bold; color: #1e3c72; margin-bottom: 0.5rem; }
+        .company { color: #666; margin-bottom: 1rem; }
+        .bullet { margin-left: 1.5rem; margin-bottom: 0.5rem; }
+        
+        /* Certifications */
+        .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: center; }
+        .cert { background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+        
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center; }
+        
+        footer { background: #1e3c72; color: white; text-align: center; padding: 2rem; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            nav ul { flex-direction: column; gap: 1rem; }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certs">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#top">Your Name</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <header id="top">
-    <div class="container py-5">
-      <div class="row align-items-center">
-        <div class="col-lg-7">
-          <h1 class="display-4 fw-bold mb-3">José Serna Jr</h1>
-          <p class="lead mb-4">
-            Developer based in Jacksonville, FL. I build simple, useful web projects with modern tools.
-          </p>
-          <a href="#projects" class="btn btn-primary btn-lg me-2">View projects</a>
-          <a href="https://github.com/jsernajr" class="btn btn-outline-light btn-lg" target="_blank">
-            GitHub
-          </a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>José Serna Jr</h1>
+            <p>Application Security Analyst & Developer | SQL, JavaScript, Relational Databases<br>
+            3+ years mission-critical systems experience | CompTIA Security+, Network+, (ISC)² SSCP</p>
         </div>
-      </div>
-    </div>
-  </header>
+    </section>
 
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <h2 class="mb-4">About</h2>
-      <p>
-        I Short intro about who you are, what you work with, and what you’re interested in.
-        Mention your main tech stack and what you’re currently learning.
-      </p>
-      <p class="mb-1"><strong>Skills:</strong> HTML, CSS, JavaScript, Bootstrap, Python</p>
-      <p><strong>Currently learning:</strong>Java, SQL, TypeScript</p>
-    </div>
-  </section>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Core Competencies</h2>
+            <table class="skills-table">
+                <thead>
+                    <tr>
+                        <th>Verified Skills</th>
+                        <th>Job Requirements Met</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Languages:</strong> JavaScript, SQL, HTML, CSS</td>
+                        <td>Req 1, 4 (Web dev, Programming)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Databases:</strong> Relational DB management, SQL querying</td>
+                        <td>Req 3 (Relational database tech)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Systems:</strong> Active Directory, Linux servers</td>
+                        <td>Desirable quals</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SDLC:</strong> Documentation, testing, deployment</td>
+                        <td>Req 2, 5 (SDLC processes, debug)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-  <!-- Projects -->
-  <section id="projects" class="bg-light">
-    <div class="container">
-      <h2 class="mb-4">Projects</h2>
-      <div class="row g-4">
-        <!-- Project 1 -->
-        <div class="col-md-6">
-          <div class="card h-100">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Project One</h5>
-              <p class="card-text">
-                One‑line summary of what this project does and why it’s interesting.
-              </p>
-              <p class="text-muted small mb-3">HTML · CSS · JavaScript</p>
-              <div class="mt-auto">
-                <a href="https://github.com/your-username/project-one" class="btn btn-sm btn-primary" target="_blank">
-                  View code
-                </a>
-                <a href="https://your-live-demo-url.com" class="btn btn-sm btn-outline-secondary ms-2" target="_blank">
-                  Live demo
-                </a>
-              </div>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Technical Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>SQL Database Dashboard</h3>
+                    <p>Web application simulating Navy database monitoring. JavaScript frontend with SQL backend simulation. Demonstrates relational database management and web application development.</p>
+                    <p><strong>Skills:</strong> JavaScript, SQL, HTML/CSS | <em>Req 1, 3, 4</em></p>
+                    <a href="#" class="btn">View Code →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Security Audit Analyzer</h3>
+                    <p>JavaScript application parsing vulnerability scan data (ACAS-style). Processes JSON data and generates compliance reports.</p>
+                    <p><strong>Skills:</strong> JavaScript, JSON, analytical processing | <em>Req 1, 6</em></p>
+                    <a href="#" class="btn">View Code →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Patch Management Tracker</h3>
+                    <p>CRUD application tracking server patching status across 50+ systems. Demonstrates full SDLC workflow from requirements to deployment.</p>
+                    <p><strong>Skills:</strong> JavaScript, SDLC, batch processing | <em>Req 2, 4</em></p>
+                    <a href="#" class="btn">View Code →</a>
+                </div>
             </div>
-          </div>
         </div>
-        <!-- Project 2 -->
-        <div class="col-md-6">
-          <div class="card h-100">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Project Two</h5>
-              <p class="card-text">
-                Another project highlighting a different technology or problem you solved.
-              </p>
-              <p class="text-muted small mb-3">Python · Flask</p>
-              <div class="mt-auto">
-                <a href="https://github.com/your-username/project-two" class="btn btn-sm btn-primary" target="_blank">
-                  View code
-                </a>
-              </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">System Administrator</div>
+                <div class="company">Enterprise Solutions and Management | Jacksonville, FL<br>Sep 2023 – May 2024</div>
+                <div class="bullet">Managed relational databases across 14 Navy bases <strong>[Req 3]</strong></div>
+                <div class="bullet">SQL queries + workstation troubleshooting across 20+ CAD systems <strong>[Req 4, 5]</strong></div>
+                <div class="bullet">99.5% uptime through systematic testing/debugging <strong>[Req 5]</strong></div>
             </div>
-          </div>
+
+            <div class="experience-item">
+                <div class="job-title">Information Assurance Analyst</div>
+                <div class="company">Enterprise Solutions and Management | Jacksonville, FL<br>May 2023 - Sep 2023</div>
+                <div class="bullet">Implemented 30+ patches across 50+ servers <strong>[Req 2, 4]</strong></div>
+                <div class="bullet">Enforced DoDI 8500.01 specifications <strong>[Req 9]</strong></div>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">NTCSS Analyst</div>
+                <div class="company">CACI | Jacksonville, FL<br>Apr 2022 – May 2023</div>
+                <div class="bullet">Conducted Active Directory security audits <strong>[Req 6]</strong></div>
+                <div class="bullet">VMware server configuration + ACAS compliance testing <strong>[Req 5]</strong></div>
+            </div>
         </div>
-        <!-- Add more projects by copying a col-md-6 block -->
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="mb-4">Contact</h2>
-      <p class="mb-1">Want to get in touch?</p>
-      <p class="mb-3">
-        Email: <a href="mailto:you@example.com">you@example.com</a>
-      </p>
-      <p>
-        Elsewhere:
-        <a href="https://github.com/your-username" target="_blank">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/your-handle" target="_blank">LinkedIn</a>
-      </p>
-    </div>
-  </section>
+    <!-- Certifications Section -->
+    <section id="certs">
+        <div class="container">
+            <h2>Industry Certifications</h2>
+            <div class="certs-grid">
+                <div class="cert">
+                    <h3>CompTIA Security+ CE</h3>
+                    <p>Cybersecurity SDLC foundations</p>
+                </div>
+                <div class="cert">
+                    <h3>CompTIA Network+ CE</h3>
+                    <p>Network programming foundations</p>
+                </div>
+                <div class="cert">
+                    <h3>(ISC)² SSCP</h3>
+                    <p>Systems security practitioner</p>
+                </div>
+                <div class="cert">
+                    <h3>JavaScript Fundamentals</h3>
+                    <p>Codecademy, Dec 2025</p>
+                </div>
+                <div class="cert">
+                    <h3>HTML/CSS/JavaScript</h3>
+                    <p>LinkedIn Learning, Nov 2025</p>
+                </div>
+                <div class="cert">
+                    <h3>Linux Essentials</h3>
+                    <p>LPI Certified</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer class="bg-dark text-light text-center">
-    <div class="container">
-      <span>© <span id="year"></span> Your Name</span>
-    </div>
-  </footer>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div>
+                    <h3>Email</h3>
+                    <p>your.email@outlook.com</p>
+                </div>
+                <div>
+                    <h3>GitHub</h3>
+                    <p><github class="com">
+                    <jsernajr></jsernajr>yourusername</p>
+                </div>
+                <div>
+                    <h3>LinkedIn</h3>
+                    <p>linkedin.com/in/yourprofile</p>
+                </div>
+                <div>
+                    <h3>Location</h3>
+                    <p>Jacksonville, FL</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Bootstrap JS (CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 José Serna Jr. Built with HTML/CSS/JavaScript.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

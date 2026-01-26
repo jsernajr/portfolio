@@ -1,0 +1,18 @@
+text
+@echo off
+echo ========================================
+echo 🔥 JAVA+SQL PORTFOLIO - ONE CLICK DEMO
+echo ========================================
+javac -cp ".;h2*.jar" *.java
+echo.
+echo 🔐 NAVY DATABASE...
+java -cp ".;h2*.jar" NavyDBTracker
+echo.
+echo 🛡️ PATCH MANAGER...
+java -cp ".;h2*.jar" PatchManager
+echo.
+echo 📊 ACAS SCANNER...
+java -cp ".;h2*.jar" ACASScanner
+echo.
+echo ✅ ALL DEMOS COMPLETE - 100%% Job Match!
+pause

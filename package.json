@@ -1,0 +1,16 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website with Java demos",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["portfolio", "java"],
+  "author": "José Serna Jr",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

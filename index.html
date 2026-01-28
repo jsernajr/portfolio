@@ -35,11 +35,6 @@
         .project-card { background: white; border-radius: 10px; padding: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
         .project-card:hover { transform: translateY(-5px); }
         
-        /* Demo Buttons */
-        .demo-btn { background: #1e3c72; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 5px; cursor: pointer; font-size: 1rem; font-weight: bold; transition: 0.3s; }
-        .demo-btn:hover { background: #2a5298; }
-        .demo-btn:active { transform: scale(0.98); }
-        .demo-btn.loading { opacity: 0.6; cursor: not-allowed; }
         .project-card h3 { color: #1e3c72; margin-bottom: 1rem; }
         
         /* Experience */
@@ -71,7 +66,6 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#demos">Demos</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#certs">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -206,34 +200,6 @@
                 <div class="cert">
                     <h3>Linux Essentials</h3>
                     <p>LPI Certified</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Java Demos Section -->
-    <section id="demos">
-        <div class="container">
-            <h2>Interactive Java Demos</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 2rem;">Click to run Java programs directly from your browser</p>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>📊 ACAS Scanner</h3>
-                    <p>Vulnerability scanning across 23 VMs with 30% security improvement</p>
-                    <button class="demo-btn" onclick="runProgram('ACASScanner')">Run Demo</button>
-                    <pre id="output-ACASScanner" style="display:none; background: #f4f4f4; padding: 1rem; border-radius: 5px; margin-top: 1rem; max-height: 200px; overflow: auto;"></pre>
-                </div>
-                <div class="project-card">
-                    <h3>🔐 Navy DB Tracker</h3>
-                    <p>Database monitoring across 14 bases with 25% false alarm reduction</p>
-                    <button class="demo-btn" onclick="runProgram('NavyDBTracker')">Run Demo</button>
-                    <pre id="output-NavyDBTracker" style="display:none; background: #f4f4f4; padding: 1rem; border-radius: 5px; margin-top: 1rem; max-height: 200px; overflow: auto;"></pre>
-                </div>
-                <div class="project-card">
-                    <h3>🛡️ Patch Manager</h3>
-                    <p>Server patch management across 50+ systems with 60% incident reduction</p>
-                    <button class="demo-btn" onclick="runProgram('PatchManager')">Run Demo</button>
-                    <pre id="output-PatchManager" style="display:none; background: #f4f4f4; padding: 1rem; border-radius: 5px; margin-top: 1rem; max-height: 200px; overflow: auto;"></pre>
                 </div>
             </div>
         </div>
